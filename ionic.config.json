@@ -1,0 +1,7 @@
+{
+  "name": "JC-Apps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
