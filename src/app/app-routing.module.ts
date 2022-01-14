@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'meister-task-reader',
+    loadChildren: () => import('./pages/meister-task-reader/meister-task-reader.module').then( m => m.MeisterTaskReaderPageModule)
+  },
+  {
+    path: 'mis-gastos',
+    loadChildren: () => import('./pages/mis-gastos/mis-gastos.module').then( m => m.MisGastosPageModule)
+  },
 ];
 
 @NgModule({

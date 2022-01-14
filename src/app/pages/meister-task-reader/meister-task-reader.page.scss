@@ -1,0 +1,81 @@
+.import-file {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    ion-input {
+        visibility: hidden;
+        max-width: 0;
+        min-width: 0;
+        height: 0;
+        width: 0;
+        position: absolute;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        ion-button {
+            font-weight: bold;
+            &:first-child {
+                margin-right: 5vw;
+            }
+        }
+    }
+    .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        ion-avatar {
+            --border-radius: 0;
+        }
+    }
+}
+.filtros {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    padding: 1vw 0 2vw;
+
+}
+.top-content {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    .column {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+        padding: 0 2vw;
+    }
+    .row {
+        width: 25%;
+    }
+}
+
+.wrapper {
+    .column {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+        padding: 0 calc(2vw + 10px);
+    }
+    .row {
+        width: 25%;
+        padding-top: 7px;
+    }
+    .sticky-bottom {
+        position: sticky;
+        bottom: 0;
+        background: #36abe0;
+        padding: 10px 0;
+    }
+
+    .yellow-background {
+        background: #36abe0;
+        padding-left: 10px;
+    }
+}

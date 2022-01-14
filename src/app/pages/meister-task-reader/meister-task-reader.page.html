@@ -1,0 +1,70 @@
+<ion-header>
+  <div class="top-content">
+    <div class="import-file">
+      <ion-input #inputFile accept="file" type="file" (change)="changeListener($event)"
+        placeholder="Seleccione archivo"></ion-input>
+      <div class="logo">
+        <ion-avatar>
+          <img src="assets/img/meister-logo.png" />
+        </ion-avatar>
+        <ion-title>CSV READER</ion-title>
+      </div>
+      <div class="buttons">
+        <ion-button mode="ios" color="dark" fill="clear" (click)="clickToInput()">
+          <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+          Seleccionar archivo
+        </ion-button>
+        <ion-button mode="ios" color="success" (click)="calcularHoras()">
+          Calcular horas
+        </ion-button>
+      </div>
+
+    </div>
+    <div class="filtros">
+      <div class="row">
+        <ion-item>
+          <ion-label position="floating">Filtro nombre</ion-label>
+          <ion-input type="text" (ionInput)="filterName($event)"></ion-input>
+        </ion-item>
+      </div>
+      <div class="row">
+        <ion-item>
+          <ion-label position="floating">Desde</ion-label>
+          <ion-input value="01/01/22" type="date" (ionInput)="fromDate($event)"></ion-input>
+        </ion-item>
+      </div>
+      <div class="row">
+        <ion-item>
+          <ion-label position="floating">Hasta</ion-label>
+          <ion-input value="01/01/22" type="date" (ionInput)="toDate($event)"></ion-input>
+        </ion-item>
+      </div>
+
+    </div>
+    <div class="column sticky-top">
+      <div class="row">Nombre</div>
+      <div class="row">Fecha</div>
+      <div class="row">Horas</div>
+      <div class="row">Notas</div>
+    </div>
+  </div>
+
+
+</ion-header>
+<ion-content>
+
+  <div class="wrapper">
+    <div class="column" *ngFor="let item of listItems">
+      <div class="row">{{item.firstName}}</div>
+      <div class="row">{{item.date}}</div>
+      <div class="row yellow-background">{{item.hour}}</div>
+      <div class="row">{{item.note}}</div>
+    </div>
+    <div *ngIf="listItems.length > 0" class="column sticky-bottom">
+      <div class="row"></div>
+      <div class="row">Total Horas</div>
+      <div class="row yellow-background">{{totalHoras | number : '1.2-2'}}</div>
+      <div class="row"></div>
+    </div>
+  </div>
+</ion-content>
